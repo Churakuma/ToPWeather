@@ -1,3 +1,10 @@
 import api from "./modules/API";
 
-api.fetchWeather('perth');
+const locationSearch = document.getElementById('location_search');
+const submitBtn = document.getElementById('submit');
+
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const location = locationSearch.value;
+    api.fetchWeather(location);
+});
